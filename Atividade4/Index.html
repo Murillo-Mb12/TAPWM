@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedra, Papel ou Tesoura</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .opcoes {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .opcao {
+      width: 120px;
+      height: 120px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      cursor: pointer;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .opcao:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+
+    .pedra {
+      background-image: url('https://images.vexels.com/media/users/3/145641/isolated/preview/30bc99162bca69bdbd27451ceeef8848-ilustracao-de-pedra-da-terra.png');
+    }
+
+    .papel {
+      background-image: url('https://images.vexels.com/media/users/3/151162/isolated/preview/0869c4066bc3ab02989e254304153611-icone-de-folha-de-papel-doodle.png');
+    }
+
+    .tesoura {
+      background-image: url('https://images.vexels.com/media/users/3/141161/isolated/preview/c3f445b9a9811b8f634f8616b9f9a61b-icone-de-tesoura.png');
+    }
+
+    #resultado {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pedra, Papel ou Tesoura</h1>
+
+  <p>Escolha uma opção:</p>
+
+  <div class="opcoes">
+    <div class="opcao pedra" onclick="jogar('pedra')"></div>
+    <div class="opcao papel" onclick="jogar('papel')"></div>
+    <div class="opcao tesoura" onclick="jogar('tesoura')"></div>
+  </div>
+
+  <div id="resultado"></div>
+
+  <script>
+    function jogar(escolhaUsuario) {
+      const opcoes = ['pedra', 'papel', 'tesoura'];
+      const indice = Math.floor(Math.random() * 3);
+      const escolhaComputador = opcoes[indice];
+
+      let resultado = "";
+
+      if (escolhaUsuario === escolhaComputador) {
+        resultado = "Empate!";
+      } else if (
+        (escolhaUsuario === 'pedra' && escolhaComputador === 'tesoura') ||
+        (escolhaUsuario === 'tesoura' && escolhaComputador === 'papel') ||
+        (escolhaUsuario === 'papel' && escolhaComputador === 'pedra')
+      ) {
+        resultado = "Você venceu!";
+      } else {
+        resultado = "Você perdeu!";
+      }
+
+      document.getElementById("resultado").innerHTML =
+        `Você escolheu: ${escolhaUsuario}<br>
+         Computador escolheu: ${escolhaComputador}<br>
+         Resultado: ${resultado}`;
+    }
+  </script>
+
+</body>
+</html>
