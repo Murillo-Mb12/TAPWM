@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios JS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="box">
+    <h2>Retângulo</h2>
+
+    <input type="number" id="base" placeholder="Base">
+    <input type="number" id="altura" placeholder="Altura">
+
+    <button onclick="calcularArea()">
+      Calcular Área
+    </button>
+
+    <p id="resultadoArea"></p>
+  </section>
+
+  <section class="box">
+    <h2>Conta Corrente</h2>
+
+    <input type="text" id="nomeCorrente" placeholder="Nome">
+    <input type="text" id="bancoCorrente" placeholder="Banco">
+    <input type="text" id="numeroCorrente" placeholder="Número da Conta">
+    <input type="number" id="saldoCorrente" placeholder="Saldo">
+    <input type="number" id="saldoEspecial" placeholder="Saldo Especial">
+
+    <button onclick="mostrarCorrente()">
+      Mostrar Dados
+    </button>
+
+    <p id="resultadoCorrente"></p>
+  </section>
+
+  <section class="box">
+    <h2>Conta Poupança</h2>
+
+    <input type="text" id="nomePoupanca" placeholder="Nome">
+    <input type="text" id="bancoPoupanca" placeholder="Banco">
+    <input type="text" id="numeroPoupanca" placeholder="Número da Conta">
+    <input type="number" id="saldoPoupanca" placeholder="Saldo">
+    <input type="number" id="juros" placeholder="Juros">
+    <input type="date" id="vencimento">
+
+    <button onclick="mostrarPoupanca()">
+      Mostrar Dados
+    </button>
+
+    <p id="resultadoPoupanca"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
