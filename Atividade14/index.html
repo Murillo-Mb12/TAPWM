@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro para Evento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Cadastro para Evento</h1>
+
+    <form name="nomeform" onsubmit="return validar()">
+
+        <label>Nome Completo</label>
+        <input type="text" name="nome">
+
+        <label>E-mail</label>
+        <input type="email" name="email">
+
+        <label>Comentário</label>
+        <textarea name="comentario" rows="5"></textarea>
+
+        <label>É sua primeira participação?</label>
+
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="pesquisa" value="sim">
+                Sim
+            </label>
+
+            <label>
+                <input type="radio" name="pesquisa" value="nao">
+                Não
+            </label>
+        </div>
+
+        <div class="botoes">
+            <button type="submit">Cadastrar</button>
+            <button type="reset">Limpar</button>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
